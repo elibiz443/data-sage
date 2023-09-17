@@ -33,3 +33,6 @@ group :development do
   # gem "rack-mini-profiler"
   # gem "spring"
 end
+
+gem 'dynamic_footer'
+gem 'inline_svg'

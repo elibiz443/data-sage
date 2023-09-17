@@ -8,9 +8,23 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Font -->
+    <link href="https://fonts.cdnfonts.com/css/ubuntu" rel="stylesheet">
+
+    <!-- FAV AND ICONS   -->
+    <%= favicon_link_tag "favicon.png" %>
   </head>
 
-  <body>
-    <%= yield %>
+  <body class="max-w-full overflow-x-hidden font-['ubuntu'] bg-gray-50">
+    <%= render "shared/header" %>
+    <%= render "shared/sidebar" %>
+    <main class="min-h-screen">
+      <%= yield %>
+    </main>
+    <%= render "shared/footer" %>
   </body>
 </html>
