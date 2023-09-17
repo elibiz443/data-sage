@@ -1,0 +1,20 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  username: etg
+  password: immortal
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: data_sage_development
+
+test:
+  <<: *default
+  database: data_sage_test
+
+production:
+  <<: *default
+  database: data_sage_production
+  username: data_sage
+  password: <%= ENV["DATA_SAGE_DATABASE_PASSWORD"] %>
